@@ -13,13 +13,16 @@ Routing to CarService and CustomerService and authentication
 #### AUTHENTICATION
 - [x] POST:   {domain}/authenticate - authenticate using username and password to obtain a JWT  
 
+#### Customer Contract Data
+- [x] GET:    {domain}/contracts?{cust_id,car_id,mileage,interest,duration} - fetches customer data and contract lease rate data for specific customer id and car id
+
 #### CARS
 - [x] GET:    {domain}/cars             - returns al cars
 - [x] GET:    {domain}/cars/{id}        - returns specific cars
 - [x] POST    {domain}/cars             - create new cars
 - [x] DELETE: {domain}/cars{id}         - delete specific cars
 - [x] PUT:    {domain}/cars{id}         - update specific cars
-- [x] GET:    {domain}/cars{id}/leaserate?{mileage,interest,duration} - calculculates leaserate for given car. required parameters
+- [x] GET:    {domain}/cars{id}/leaserate?{mileage,interest,duration} - calculates lease rate for given car. required parameters
 
 #### CUSTOMERS
 - [x] GET:    {domain}/customers          - returns al customers
