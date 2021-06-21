@@ -1,4 +1,4 @@
-package com.monolithical.gateway.api;
+package com.monolithical.gateway.api.authentication;
 
 import com.monolithical.gateway.repositories.UserRepository;
 import com.monolithical.gateway.services.HashService;

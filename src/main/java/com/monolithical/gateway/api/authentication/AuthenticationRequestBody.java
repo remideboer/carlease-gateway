@@ -1,4 +1,4 @@
-package com.monolithical.gateway.api;
+package com.monolithical.gateway.api.authentication;
 
 public class AuthenticationRequestBody {
     private String username;
