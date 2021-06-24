@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: carService
+          uri: http://car-service:9091/cars
+          predicates:
+            - Path=/cars/**
+        - id: customerService
+          uri: http://customer-service:9092/customers
+          predicates:
+            - Path=/customers/**
+  main:
+    web-application-type: reactive
+  # database
+  datasource:
+    url: jdbc:h2:mem:users;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    database-platform: org.hibernate.dialect.H2Dialect
+  # prevents hibernate dropping created table from init script
+  jpa:
+    hibernate:
+      ddl-auto: none
+jwt:
+  secret: imasecretimasecretimasecretimasecret
+  # in seconds
+  expiration: 3600
+# hashing
+hash:
+  strength: 12
+# routes to services
+# filter setting
+# supply paths separated by a comma eg: path1,path2
+filter:
+  url:
+    exclude: authenticate
+
+
